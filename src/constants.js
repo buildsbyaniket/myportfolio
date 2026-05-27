@@ -234,15 +234,6 @@ export const projects = [
     github: "https://github.com/buildsbyaniket/netflix-clone",
     // webapp: "https://movie-recommendation-app-jet.vercel.app/",
   },
-  {
-    id: 3,
-    title: "Netflix Clone",
-    description:
-      "Built a Netflix-inspired streaming web application with a responsive and modern UI.",
-    image: npmLogo,
-    tags: ["HTML", "CSS", "Javascript"],
-    // github: "https://github.com/buildsbyaniket/netflix-clone",
-    // webapp: "https://www.npmjs.com/package/cmtk-email-validator",
-  },
+  
 ];
 
