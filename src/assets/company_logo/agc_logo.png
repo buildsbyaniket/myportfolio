@@ -1,0 +1,18 @@
+[plugin:vite:import-analysis] Failed to resolve import "./assets/tech_logo/html.png" from "src/constants.js". Does the file exist?
+C:/Users/anike/OneDrive/Desktop/Code/Coding/portfolio project/myportfolio/src/constants.js:2:22
+1  |  // Skills Section Logo's
+2  |  import htmlLogo from './assets/tech_logo/html.png';
+   |                         ^
+3  |  import cssLogo from './assets/tech_logo/css.png';
+4  |  import sassLogo from './assets/tech_logo/sass.png';
+    at TransformPluginContext._formatLog (file:///C:/Users/anike/OneDrive/Desktop/Code/Coding/portfolio%20project/myportfolio/node_modules/vite/dist/node/chunks/config.js:28998:43)
+    at TransformPluginContext.error (file:///C:/Users/anike/OneDrive/Desktop/Code/Coding/portfolio%20project/myportfolio/node_modules/vite/dist/node/chunks/config.js:28995:14)
+    at normalizeUrl (file:///C:/Users/anike/OneDrive/Desktop/Code/Coding/portfolio%20project/myportfolio/node_modules/vite/dist/node/chunks/config.js:27118:18)
+    at async file:///C:/Users/anike/OneDrive/Desktop/Code/Coding/portfolio%20project/myportfolio/node_modules/vite/dist/node/chunks/config.js:27176:32
+    at async Promise.all (index 0)
+    at async TransformPluginContext.transform (file:///C:/Users/anike/OneDrive/Desktop/Code/Coding/portfolio%20project/myportfolio/node_modules/vite/dist/node/chunks/config.js:27144:4)
+    at async EnvironmentPluginContainer.transform (file:///C:/Users/anike/OneDrive/Desktop/Code/Coding/portfolio%20project/myportfolio/node_modules/vite/dist/node/chunks/config.js:28796:14)
+    at async loadAndTransform (file:///C:/Users/anike/OneDrive/Desktop/Code/Coding/portfolio%20project/myportfolio/node_modules/vite/dist/node/chunks/config.js:22669:26)
+    at async viteTransformMiddleware (file:///C:/Users/anike/OneDrive/Desktop/Code/Coding/portfolio%20project/myportfolio/node_modules/vite/dist/node/chunks/config.js:24541:20)
+Click outside, press Esc key, or fix the code to dismiss.
+You can also disable this overlay by setting server.hmr.overlay to false in vite.config.js.
