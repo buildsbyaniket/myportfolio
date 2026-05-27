@@ -206,7 +206,7 @@ export const SkillsInfo = [
 export const projects = [
   {
     id: 0,
-    title: "Liabrary Management System & Booking System",
+    title: "Library Management System & Booking System",
     description:
       "A modern Booking System designed to manage reservations, scheduling, and user bookings efficiently. The platform provides real-time booking management, secure user interactions, responsive UI, and streamlined workflows for handling appointments or service reservations..",
     image: githubdetLogo,
