@@ -11,7 +11,7 @@ import BlurBlob from "./BlurBlob";
 
 function App() {
   return (
-    <div className="bg-[#020108] relative min-h-screen text-white overflow-hidden bg-grid-blueprint">
+    <div className="bg-[#040112] md:bg-[#020108] relative min-h-screen text-white overflow-hidden bg-grid-blueprint">
       
       {/* GRID OVERLAY WITH PULSE */}
       <div className="absolute inset-0 bg-[#8245ec]/[0.01] pointer-events-none animate-gridPulse" />
