@@ -179,7 +179,7 @@ export const SkillsInfo = [
     img: "",
     school: "G. H. Raisoni College of Engineering and Management, Pune",
     date: "2023 - Present",
-    grade: "8.4 CGPA",
+    grade: "8.44 CGPA",
     desc: "I am currently a 3rd-year undergraduate student pursuing a Bachelor of Engineering in Information Technology at G. H. Raisoni College of Engineering and Management, Pune. My academic journey focuses on core IT and computer science subjects such as Data Structures, Algorithms, Database Management Systems, Web Development, Software Engineering, and Networking. Through coursework and projects, I am continuously enhancing my technical skills and practical knowledge.",
     degree: "Bachelor of Engineering - Information Technology",
   },
@@ -243,7 +243,6 @@ export const projects = [
     image: posBillingLogo,
     tags: ["React Native", "Expo Web", "TypeScript", "Redux Toolkit", "AsyncStorage"],
     github: "https://github.com/buildsbyaniket/pos-billing-native",
-    webapp: "https://pos-billing-native.vercel.app/",
+    webapp: "https://myportfolio-smoky-zeta-39.vercel.app/",
   },
 ];
-

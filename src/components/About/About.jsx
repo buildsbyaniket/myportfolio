@@ -27,23 +27,23 @@ const About = () => {
             Aniket Dev
           </h2>
 
-          <h3 className="text-xl md:text-2xl font-bold text-[#8245ec] flex items-center justify-center md:justify-start gap-2 h-10 select-none">
-            <span className="text-gray-400">I specialize in </span>
-            <span className="text-purple-400 underline decoration-purple-600 decoration-wavy">
-              <Typewriter
-                options={{
-                  strings: [
-                    "FullStack Development",
-                    "UI/UX Designing",
-                    "DSA Problem Solving",
-                    "Scalable Architecture",
-                  ],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            </span>
-          </h3>
+          <h3 className="text-xl md:text-2xl font-bold text-[#8245ec] flex flex-wrap items-center justify-center md:justify-start gap-2 min-h-[2.5rem] select-none">
+              <span className="text-gray-400">I specialize in </span>
+              <span className="text-purple-400 underline decoration-purple-600 decoration-wavy">
+                <Typewriter
+                  options={{
+                    strings: [
+                      "FullStack Development",
+                      "UI/UX Designing",
+                      "DSA Problem Solving",
+                      "Scalable Architecture",
+                    ],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              </span>
+            </h3>
 
           {/* Glowing Double Outline Text Box */}
           <div className="bg-[#0b0a1d]/60 border border-white/10 rounded-3xl p-6 mt-8 relative shadow-2xl backdrop-blur-sm group hover:border-[#8245ec]/40 transition-colors">
