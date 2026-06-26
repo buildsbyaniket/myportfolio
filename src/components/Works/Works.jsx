@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { projects } from "../../constants";
+import { FaGithub, FaLink, FaWindowMaximize, FaExternalLinkAlt, FaTerminal } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -14,117 +16,168 @@ const Work = () => {
 
   return (
     <section
-      id="work"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans relative"
+      id="works"
+      className="py-24 px-[10vw] md:px-[7vw] lg:px-[16vw] font-sans relative overflow-hidden"
     >
+      {/* Background Orbs */}
+      <div className="absolute inset-0 pointer-events-none -z-10">
+        <div className="absolute bottom-[10%] right-[-5%] w-[350px] h-[350px] bg-purple-600/5 rounded-full blur-[90px]" />
+      </div>
+
       {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white">PROJECTS</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
-          A showcase of the projects I have worked on, highlighting my skills
-          and experience in various technologies
+      <div className="text-center mb-16 relative">
+        <span className="text-[#8245ec] font-bold text-xs uppercase tracking-[0.25em] bg-[#8245ec]/10 px-4 py-1.5 rounded-full border border-[#8245ec]/20 shadow-[0_0_15px_rgba(130,69,236,0.1)]">
+          Portfolio
+        </span>
+        <h2 className="text-4.5xl font-black text-white mt-6 tracking-tight">
+          RECENT <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">WORKS</span>
+        </h2>
+        <div className="w-16 h-1 bg-gradient-to-r from-transparent via-[#8245ec] to-transparent mx-auto mt-4" />
+        <p className="text-gray-400 mt-4 text-lg font-medium max-w-xl mx-auto">
+          A collection of full-stack projects showcasing custom integrations, database systems, and interactive UI dashboards.
         </p>
       </div>
 
       {/* Projects Grid */}
-      <div className="grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
-          <div
+      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project, index) => (
+          <motion.div
             key={project.id}
             onClick={() => handleOpenModal(project)}
-            className="border border-white bg-gray-900 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden cursor-pointer hover:shadow-purple-500/50 hover:-translate-y-2 transition-transform duration-300"
+            whileHover={{ y: -6 }}
+            className="bg-[#080619]/90 border border-white/10 rounded-[2.2rem] shadow-2xl overflow-hidden cursor-pointer relative group hover:border-[#8245ec]/40 transition-colors duration-300"
           >
+            {/* Double Outline Glow */}
+            <div className="absolute -inset-1 border border-purple-500/5 rounded-[2.5rem] pointer-events-none group-hover:border-purple-500/10 transition-colors" />
+
+            {/* Custom high-tech header tags */}
+            <div className="bg-[#0b0a21] px-5 py-3 border-b border-white/5 flex items-center justify-between">
+              <div className="flex items-center gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+              </div>
+              <span className="font-mono text-[9px] text-purple-500/50 tracking-wider">
+                [PROJECT_NODE_{index + 1}]
+              </span>
+            </div>
+
             <div className="p-4">
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover rounded-xl"
+                className="w-full h-44 object-cover rounded-[1.5rem] border border-white/5"
               />
             </div>
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-white mb-2">
+            <div className="p-6 pt-2">
+              <h3 className="text-xl font-black text-white group-hover:text-purple-400 transition-colors">
                 {project.title}
               </h3>
-              <p className="text-gray-500 mb-4 pt-4 line-clamp-3">
+              
+              <p className="text-gray-400 text-sm mt-3 line-clamp-3 leading-relaxed text-justify">
                 {project.description}
               </p>
-              <div className="mb-4">
-                {project.tags.map((tag, index) => (
+
+              {/* Tags */}
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                {project.tags.map((tag, i) => (
                   <span
-                    key={index}
-                    className="inline-block bg-[#251f38] text-xs font-semibold text-purple-500 rounded-full px-2 py-1 mr-2 mb-2"
+                    key={i}
+                    className="inline-block bg-[#050312] border border-white/5 text-[9px] font-mono font-bold text-purple-400 rounded-lg px-2.5 py-1"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* Modal Container */}
-      {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4">
-          <div className="bg-gray-900 rounded-xl shadow-2xl lg:w-full w-[90%] max-w-3xl overflow-hidden relative">
-            <div className="flex justify-end p-4">
-              <button
-                onClick={handleCloseModal}
-                className="text-white text-3xl font-bold hover:text-purple-500"
-              >
-                &times;
-              </button>
-            </div>
+      <AnimatePresence>
+        {selectedProject && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-[#080619] border border-white/10 rounded-[2.5rem] shadow-2xl lg:w-full w-[95%] max-w-3xl overflow-hidden relative"
+            >
+              {/* Modal Window Header */}
+              <div className="bg-[#0b0a21] px-6 py-4.5 border-b border-white/5 flex items-center justify-between">
+                <span className="font-mono text-[10px] text-purple-400 flex items-center gap-2 uppercase tracking-widest font-bold">
+                  <FaTerminal /> project_inspector.exe
+                </span>
+                <button
+                  onClick={handleCloseModal}
+                  className="text-gray-400 text-2xl leading-none hover:text-purple-500 font-bold"
+                >
+                  &times;
+                </button>
+              </div>
 
-            <div className="flex flex-col">
-              <div className="w-full flex justify-center bg-gray-900 px-4">
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="lg:w-full w-[95%] object-contain rounded-xl shadow-2xl"
-                />
-              </div>
-              <div className="lg:p-8 p-6">
-                <h3 className="lg:text-3xl font-bold text-white mb-4 text-md">
-                  {selectedProject.title}
-                </h3>
-                <p className="text-gray-400 mb-6 lg:text-base text-xs">
-                  {selectedProject.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {selectedProject.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="bg-[#251f38] text-xs font-semibold text-purple-500 rounded-full px-2 py-1"
+              <div className="flex flex-col">
+                {/* Image */}
+                <div className="w-full flex justify-center bg-[#050312] p-6 border-b border-white/5">
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="max-h-60 object-contain rounded-2xl border border-white/5 shadow-2xl"
+                  />
+                </div>
+
+                {/* Details */}
+                <div className="p-6 md:p-8">
+                  <h3 className="text-2xl font-black text-white mb-3">
+                    {selectedProject.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-6 text-justify">
+                    {selectedProject.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-1.5 mb-6">
+                    {selectedProject.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="bg-[#050312] border border-white/5 text-[9px] font-mono font-bold text-purple-400 rounded-lg px-2.5 py-1"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Actions buttons */}
+                  <div className="flex gap-4">
+                    <a
+                      href={selectedProject.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-1/2 flex items-center justify-center gap-2 bg-[#050312] border border-white/10 hover:border-[#8245ec]/50 hover:bg-[#8245ec]/5 text-gray-300 py-3 rounded-2xl text-xs uppercase tracking-widest font-extrabold transition-all"
                     >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-4">
-                  <a
-                    href={selectedProject.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-1/2 bg-gray-800 hover:bg-purple-800 text-gray-400 lg:px-6 lg:py-2 px-2 py-1 rounded-xl lg:text-xl text-sm font-semibold text-center"
-                  >
-                    View Code
-                  </a>
-                  <a
-                    href={selectedProject.webapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-1/2 bg-purple-600 hover:bg-purple-800 text-white lg:px-6 lg:py-2 px-2 py-1 rounded-xl lg:text-xl text-sm font-semibold text-center"
-                  >
-                    View Live
-                  </a>
+                      <FaGithub size={14} className="text-purple-400" /> View Code
+                    </a>
+                    {selectedProject.webapp ? (
+                      <a
+                        href={selectedProject.webapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-1/2 flex items-center justify-center gap-2 bg-[#8245ec] hover:bg-[#9760fa] hover:shadow-[0_0_20px_rgba(130,69,236,0.4)] text-white py-3 rounded-2xl text-xs uppercase tracking-widest font-extrabold transition-all"
+                      >
+                        <FaLink size={12} /> View Live
+                      </a>
+                    ) : (
+                      <div className="w-1/2 flex items-center justify-center gap-2 bg-white/5 border border-white/5 text-gray-500 py-3 rounded-2xl text-xs uppercase tracking-widest font-extrabold select-none cursor-not-allowed">
+                        Live offline
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </section>
   );
 };

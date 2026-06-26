@@ -58,6 +58,7 @@ import npmLogo from "./assets/work_logo/npm.png";
 import cmLogo from "./assets/work_logo/cm.png";
 import imagesearchLogo from "./assets/work_logo/image_search.png";
 import removebgLogo from "./assets/work_logo/remove_bg.png";
+import posBillingLogo from "./assets/work_logo/pos_billing.png";
 // import tailwindcss from "@tailwindcss/vite";
 
 
@@ -177,7 +178,7 @@ export const SkillsInfo = [
     id: 0,
     img: "",
     school: "G. H. Raisoni College of Engineering and Management, Pune",
-    date: "2022 - Present",
+    date: "2023 - Present",
     grade: "8.4 CGPA",
     desc: "I am currently a 3rd-year undergraduate student pursuing a Bachelor of Engineering in Information Technology at G. H. Raisoni College of Engineering and Management, Pune. My academic journey focuses on core IT and computer science subjects such as Data Structures, Algorithms, Database Management Systems, Web Development, Software Engineering, and Networking. Through coursework and projects, I am continuously enhancing my technical skills and practical knowledge.",
     degree: "Bachelor of Engineering - Information Technology",
@@ -186,7 +187,7 @@ export const SkillsInfo = [
     id: 1,
     img: "",
     school: "Late R. K. Kakani Mahavidyalaya, Malegaon",
-    date: "2020 - 2022",
+    date: "2021 - 2023",
     grade: "82.50% (2nd Rank in College)",
     desc: "I completed my Higher Secondary education (Class 12) from Late R. K. Kakani Mahavidyalaya, Malegaon. I secured 82.50% and achieved second position in the college. This phase of my education helped build a strong academic foundation and prepared me for engineering studies.",
     degree: "HSC (XII)",
@@ -195,7 +196,7 @@ export const SkillsInfo = [
     id: 2,
     img: "",
     school: "Z. P. Kakani Vidyalay, Malegaon",
-    date: "2018 - 2019",
+    date: "2020 - 2021",
     grade: "92.60%",
     desc: "I completed my Secondary School education (Class 10) from Z. P. Kakani Vidyalay, Malegaon. I secured an excellent score of 92.60%, demonstrating strong academic performance and consistency in studies.",
     degree: "SSC (X)",
@@ -234,6 +235,15 @@ export const projects = [
     github: "https://github.com/buildsbyaniket/netflix-clone",
     // webapp: "https://movie-recommendation-app-jet.vercel.app/",
   },
-  
+  {
+    id: 3,
+    title: "POS Billing App",
+    description:
+      "A cross-platform Point of Sale (POS) billing application built with React Native and Expo, deployed as a web interface on Vercel. Features modular product inventories, real-time cart accounting, invoice receipt configurations, transaction logs, and local asynchronous data persistence.",
+    image: posBillingLogo,
+    tags: ["React Native", "Expo Web", "TypeScript", "Redux Toolkit", "AsyncStorage"],
+    github: "https://github.com/buildsbyaniket/pos-billing-native",
+    webapp: "https://pos-billing-native.vercel.app/",
+  },
 ];
 
