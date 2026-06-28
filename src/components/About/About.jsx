@@ -2,7 +2,7 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import Tilt from "react-parallax-tilt";
 import profileImage from "../../assets/profile2.png";
-import frameImage from "../../assets/about_frame.png";
+
 import { FaTerminal, FaFileDownload, FaNetworkWired } from "react-icons/fa";
 
 const About = () => {
@@ -11,7 +11,7 @@ const About = () => {
       id="about"
       className="relative z-10 min-h-screen px-[10vw] md:px-[7vw] lg:px-[16vw] flex items-center pt-20"
     >
-      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url(${profileImage})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', opacity: 0.12, mixBlendMode: 'overlay' }} />
+
       <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full gap-16">
 
         {/* LEFT PANEL: CYBER TEXT CONSOLE */}
@@ -92,11 +92,13 @@ const About = () => {
             <div className="absolute bottom-2 right-4 font-mono text-[9px] text-purple-400/50 z-20 select-none tracking-wider">[TARGET.SYS_ALIGN]</div>
 
             {/* Profile image with inner shadow panel */}
-            {/* Profile image merged as background */}
+            {/* Profile image with glass effect */}
             <div
               className="w-64 h-64 md:w-[26rem] md:h-[26rem] rounded-[2rem] overflow-hidden bg-gradient-to-b from-purple-950/20 to-transparent border border-white/10 shadow-2xl relative z-10"
-              style={{ backgroundImage: `url(${profileImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
             >
+              <img src={profileImage} alt="Aniket Dev" className="w-full h-full object-cover" />
+              {/* Glass overlay */}
+              <div className="absolute inset-0 rounded-[2rem] bg-white/10 backdrop-blur-md border border-white/20 pointer-events-none" />
               {/* Inner ambient shadows */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#020108] via-transparent to-transparent opacity-80" />
             </div>
