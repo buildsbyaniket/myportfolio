@@ -97,7 +97,7 @@ const About = () => {
               style={{ backgroundImage: `url(${profileImage})` }}
             >
               {/* Glass overlay with frosted effect */}
-              <div className="absolute inset-0 rounded-[2rem] bg-white/10 backdrop-blur-md pointer-events-none" />
+              <div className="absolute inset-0 rounded-[2rem] border border-white/30 pointer-events-none" />
               {/* Inner ambient shadows */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#020108] via-transparent to-transparent opacity-80 pointer-events-none" />
             </div>
