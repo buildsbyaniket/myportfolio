@@ -2,6 +2,7 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import Tilt from "react-parallax-tilt";
 import profileImage from "../../assets/profile2.png";
+import frameImage from "../../assets/about_frame.png";
 import { FaTerminal, FaFileDownload, FaNetworkWired } from "react-icons/fa";
 
 const About = () => {
@@ -10,6 +11,7 @@ const About = () => {
       id="about"
       className="relative z-10 min-h-screen px-[10vw] md:px-[7vw] lg:px-[16vw] flex items-center pt-20"
     >
+      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `url(${profileImage})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', opacity: 0.12, mixBlendMode: 'overlay' }} />
       <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full gap-16">
 
         {/* LEFT PANEL: CYBER TEXT CONSOLE */}
@@ -84,17 +86,17 @@ const About = () => {
             <div className="absolute -inset-4 border border-[#8245ec]/20 rounded-[3rem] pointer-events-none z-0 hidden lg:block" />
             <div className="absolute -inset-2 border-2 border-[#8245ec]/40 rounded-[2.5rem] pointer-events-none z-0" />
             
+            
             {/* Corner tags for high-tech detailing */}
             <div className="absolute top-2 left-4 font-mono text-[9px] text-purple-400/50 z-20 select-none tracking-wider">[SYS.GRID_X_29]</div>
             <div className="absolute bottom-2 right-4 font-mono text-[9px] text-purple-400/50 z-20 select-none tracking-wider">[TARGET.SYS_ALIGN]</div>
 
             {/* Profile image with inner shadow panel */}
-            <div className="w-64 h-64 md:w-[26rem] md:h-[26rem] rounded-[2rem] overflow-hidden bg-gradient-to-b from-purple-950/20 to-transparent border border-white/10 shadow-2xl relative z-10">
-              <img
-                src={profileImage}
-                alt="Aniket Dev"
-                className="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition duration-500"
-              />
+            {/* Profile image merged as background */}
+            <div
+              className="w-64 h-64 md:w-[26rem] md:h-[26rem] rounded-[2rem] overflow-hidden bg-gradient-to-b from-purple-950/20 to-transparent border border-white/10 shadow-2xl relative z-10"
+              style={{ backgroundImage: `url(${profileImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+            >
               {/* Inner ambient shadows */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#020108] via-transparent to-transparent opacity-80" />
             </div>
