@@ -1,5 +1,7 @@
 import React from "react";
+// Trigger redeploy
 import Typewriter from "typewriter-effect";
+
 import Tilt from "react-parallax-tilt";
 import profileImage from "../../assets/profile2.png";
 
@@ -91,13 +93,13 @@ const About = () => {
             {/* Profile image with inner shadow panel */}
             {/* Profile image with glass effect */}
             <div
-              className="w-64 h-64 md:w-[26rem] md:h-[26rem] rounded-[2rem] overflow-hidden bg-gradient-to-b from-purple-950/20 to-transparent border border-white/10 shadow-2xl relative z-10"
+              className="w-64 h-64 md:w-[26rem] md:h-[26rem] rounded-[2rem] overflow-hidden bg-cover bg-center bg-no-repeat relative z-10"
+              style={{ backgroundImage: `url(${profileImage})` }}
             >
-              <img src={profileImage} alt="Aniket Dev" className="w-full h-full object-cover" />
-              {/* Glass overlay */}
-              <div className="absolute inset-0 rounded-[2rem] border border-white/30 pointer-events-none" />
+              {/* Glass overlay with frosted effect */}
+              <div className="absolute inset-0 rounded-[2rem] bg-white/10 backdrop-blur-md pointer-events-none" />
               {/* Inner ambient shadows */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020108] via-transparent to-transparent opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020108] via-transparent to-transparent opacity-80 pointer-events-none" />
             </div>
           </Tilt>
         </div>
