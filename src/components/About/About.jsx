@@ -95,7 +95,7 @@ const About = () => {
             >
               <img src={profileImage} alt="Aniket Dev" className="w-full h-full object-cover" />
               {/* Glass overlay */}
-              <div className="absolute inset-0 rounded-[2rem] bg-white/10 border border-white/20 pointer-events-none" />
+              <div className="absolute inset-0 rounded-[2rem] border border-white/30 pointer-events-none" />
               {/* Inner ambient shadows */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#020108] via-transparent to-transparent opacity-80" />
             </div>
