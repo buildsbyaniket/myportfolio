@@ -16,10 +16,7 @@ const About = () => {
 
         {/* LEFT PANEL: CYBER TEXT CONSOLE */}
         <div className="md:w-1/2 text-center md:text-left relative">
-          {/* Decorative tag */}
-          <div className="inline-flex items-center gap-2 font-mono text-[#8245ec] text-xs uppercase tracking-widest bg-[#8245ec]/10 px-3.5 py-1.5 rounded-lg border border-[#8245ec]/20 mb-6 select-none shadow-[0_0_15px_rgba(130,69,236,0.1)]">
-            <FaTerminal className="animate-pulse" /> [SYS.INIT_PROFILE_DET]
-          </div>
+
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-2 tracking-tight">
             Hi, I am
@@ -98,7 +95,7 @@ const About = () => {
             >
               <img src={profileImage} alt="Aniket Dev" className="w-full h-full object-cover" />
               {/* Glass overlay */}
-              <div className="absolute inset-0 rounded-[2rem] bg-white/10 backdrop-blur-md border border-white/20 pointer-events-none" />
+              <div className="absolute inset-0 rounded-[2rem] bg-white/10 border border-white/20 pointer-events-none" />
               {/* Inner ambient shadows */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#020108] via-transparent to-transparent opacity-80" />
             </div>
